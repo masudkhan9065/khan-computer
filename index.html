@@ -1,134 +1,118 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>খান কম্পিউটার - দোকান হিসাব</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>খান কম্পিউটার - টালি খাতা</title>
 <style>
-*{box-sizing:border-box;font-family:Hind Siliguri,Arial,sans-serif}
-body{margin:0;background:#f1f5f9;color:#111}
-header{background:#0f172a;color:#fff;padding:14px;text-align:center;position:sticky;top:0;z-index:10}
-header h1{margin:0;font-size:22px} header p{margin:2px 0 0;font-size:13px;opacity:.8}
-.top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px}
-.card{background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px #0001}
-.card b{font-size:20px;display:block} .green{color:#16a34a}.red{color:#dc2626}.orange{color:#ea580c}
-.tabs{display:flex;gap:6px;padding:0 10px;overflow:auto}
-.tabs button{flex:1;white-space:nowrap;padding:10px;border:0;border-radius:10px;background:#e2e8f0;font-weight:700;cursor:pointer}
-.tabs button.active{background:#0f172a;color:#fff}
-.wrap{padding:10px}
-.box{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 2px 8px #0001}
-h3{margin:0 0 10px} input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;margin-bottom:8px;font-size:15px}
-.btn{width:100%;padding:12px;border:0;border-radius:10px;background:#16a34a;color:#fff;font-weight:700;font-size:16px;cursor:pointer}
-.btn2{background:#0f172a}.btn3{background:#dc2626}.btn4{background:#f59e0b}
+*{box-sizing:border-box;font-family:Hind Siliguri,Arial} body{margin:0;background:#f8fafc}
+header{background:#d92d20;color:#fff;padding:14px;text-align:center;position:sticky;top:0;z-index:10}
+header h1{margin:0;font-size:22px} header p{margin:3px 0 0;font-size:13px;opacity:.9}
+.cash{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px}
+.c{background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px #0001}
+.c b{display:block;font-size:19px} .g{color:#16a34a}.r{color:#d92d20}.o{color:#ea580c}
+.tabs{display:flex;gap:6px;padding:0 10px}.tabs button{flex:1;padding:11px;border:0;border-radius:10px;background:#e2e8f0;font-weight:700}
+.tabs button.on{background:#d92d20;color:#fff}
+.wrap{padding:10px}.box{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 2px 8px #0001}
+input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;margin-bottom:8px;font-size:15px}
+.btn{width:100%;padding:12px;border:0;border-radius:10px;color:#fff;font-weight:700;font-size:16px;background:#d92d20}
+.btnG{background:#16a34a}.btnB{background:#0f172a}.btnO{background:#f59e0b}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .item{border:1px solid #e2e8f0;border-radius:12px;padding:10px;text-align:center;background:#fff}
-.item b{display:block;font-size:16px}.item span{color:#666;font-size:13px}
-.item button{margin-top:8px;width:100%;padding:9px;border:0;border-radius:8px;background:#0f172a;color:#fff;font-weight:700}
-.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed #e2e8f0;font-size:14px}
-.small{font-size:12px;color:#666} .flex{display:flex;gap:6px}
-.flex button{flex:1;padding:9px;border:0;border-radius:8px;color:#fff;font-weight:700}
-.hide{display:none}
+.item button{width:100%;padding:9px;border:0;border-radius:8px;background:#0f172a;color:#fff;font-weight:700;margin-top:6px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #e2e8f0}
+.small{font-size:12px;color:#666}.hide{display:none}
+.cust{border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:8px;background:#fff;cursor:pointer}
+.pill{padding:4px 8px;border-radius:20px;font-size:12px;font-weight:700;color:#fff}
+.flex{display:flex;gap:6px}.flex button{flex:1;padding:10px;border:0;border-radius:8px;color:#fff;font-weight:700}
 </style>
 </head>
 <body>
-<header><h1>🏪 খান কম্পিউটার & স্টেশনারি</h1><p>বিক্রি • বাকি • আয়-ব্যয় হিসাব</p></header>
+<header><h1>🏪 খান কম্পিউটার</h1><p>টালি খাতা • বাকি • বিক্রি • ক্যাশ বই</p></header>
 
-<div class="top">
-<div class="card">আজ বিক্রি<b class="green" id="todaySale">০৳</b></div>
-<div class="card">মোট বাকি<b class="orange" id="totalBaki">০৳</b></div>
-<div class="card">আজ খরচ<b class="red" id="todayExp">০৳</b></div>
+<div class="cash">
+<div class="c">আজ পাইলাম<b class="g" id="todayIn">0৳</b></div>
+<div class="c">আজ বাকি দিলাম<b class="r" id="todayOut">0৳</b></div>
+<div class="c">মোট বাকি পাবো<b class="o" id="totalDue">0৳</b></div>
 </div>
 
 <div class="tabs">
-<button onclick="show('sell',this)" class="active">🛒 বিক্রি</button>
-<button onclick="show('baki',this)">� دفتر বাকি</button>
-<button onclick="show('stock',this)">📦 মাল / স্টক</button>
-<button onclick="show('hisab',this)">💰 আয়-ব্যয়</button>
+<button onclick="show('khata',this)" class="on">📒 খাতা</button>
+<button onclick="show('sell',this)">🛒 বিক্রি</button>
+<button onclick="show('cashbook',this)">💰 ক্যাশ বই</button>
+<button onclick="show('stock',this)">📦 স্টক</button>
 </div>
 
 <div class="wrap">
-<!-- SELL -->
-<div id="sell">
-<div class="box">
-<input id="custName" placeholder="ক্রেতার নাম (না দিলেও হবে)">
-<select id="payType"><option value="cash">💵 নগদ বিক্রি</option><option value="baki">� دفتر বাকি বিক্রি</option></select>
+<!-- KHATA -->
+<div id="khata">
+<div class="box"><h3 style="margin:0 0 10px">➕ নতুন কাস্টমারের খাতা</h3>
+<input id="newCust" placeholder="নাম লিখুন - যেমন: রহিম মিয়া">
+<input id="newPhone" placeholder="মোবাইল নম্বর (ইচ্ছা)">
+<button class="btn" onclick="addCust()">খাতা খুলুন</button></div>
+<div class="box"><h3 style="margin:0 0 10px">👥 সবার খাতা</h3><div id="custList"></div></div>
+<div class="box" id="detailBox" style="display:none">
+<h3 id="detailName">খাতা</h3><p id="detailDue" class="small"></p>
+<input id="amt" type="number" placeholder="টাকার পরিমাণ">
+<input id="note" placeholder="কি বাবদ? যেমন: ২টা খাতা / ফটোকপি">
+<div class="flex"><button style="background:#d92d20" onclick="trans('udhar')">❌ বাকি দিলাম</button><button style="background:#16a34a" onclick="trans('joma')">✅ টাকা পাইলাম</button></div>
+<div id="transList" style="margin-top:12px"></div>
+<button class="btn btnB" style="margin-top:10px" onclick="document.getElementById('detailBox').style.display='none'">বন্ধ করুন</button>
 </div>
-<div class="grid" id="productGrid"></div>
-<div class="box"><h3>🧾 আজকের বিক্রি</h3><div id="saleList"></div></div>
 </div>
 
-<!-- BAKI -->
-<div id="baki" class="hide">
-<div class="box"><h3>➕ নতুন বাকি যোগ</h3>
-<input id="bakiName" placeholder="নাম লিখুন - যেমন: রহিম">
-<input id="bakiAmt" type="number" placeholder="টাকার পরিমাণ">
-<input id="bakiNote" placeholder="কি নিলো? যেমন: ২টা খাতা">
-<button class="btn btn2" onclick="addBaki()">বাকি যোগ করুন</button></div>
-<div class="box"><h3>📋 বাকির খাতা</h3><div id="bakiList"></div></div>
+<!-- SELL -->
+<div id="sell" class="hide">
+<div class="box"><input id="custName" placeholder="কার কাছে বিক্রি? নাম লিখুন"><select id="payType"><option value="cash">💵 নগদ - সাথে সাথে টাকা পাইলাম</option><option value="baki">📒 বাকি - খাতায় লিখবো</option></select></div>
+<div class="grid" id="pGrid"></div>
+</div>
+
+<!-- CASHBOOK -->
+<div id="cashbook" class="hide">
+<div class="box"><h3 style="margin:0 0 10px">➕ খরচ লিখুন</h3><input id="expNote" placeholder="কিসে খরচ? যেমন: কাগজ কিনলাম"><input id="expAmt" type="number" placeholder="টাকা"><button class="btn" onclick="addExp()">খরচ যোগ</button></div>
+<div class="box"><h3 style="margin:0 0 10px">📋 আজকের লেনদেন</h3><div id="cashList"></div></div>
 </div>
 
 <!-- STOCK -->
 <div id="stock" class="hide">
-<div class="box"><h3>➕ নতুন মাল যোগ</h3>
-<input id="newName" placeholder="মালের নাম - যেমন: রাবার">
-<input id="newPrice" type="number" placeholder="দাম - যেমন: ২০">
-<button class="btn" onclick="addProduct()">মাল যোগ করুন</button></div>
-<div class="box"><h3>📦 দোকানের মাল</h3><div id="stockList"></div></div>
-</div>
-
-<!-- HISAB -->
-<div id="hisab" class="hide">
-<div class="box"><h3>➕ খরচ যোগ</h3>
-<input id="expNote" placeholder="কিসে খরচ? যেমন: কাগজ কিনলাম">
-<input id="expAmt" type="number" placeholder="টাকা">
-<button class="btn btn3" onclick="addExp()">খরচ যোগ করুন</button></div>
-<div class="box"><h3>📊 সব হিসাব</h3><div id="allHisab"></div>
-<button class="btn btn4" style="margin-top:10px" onclick="if(confirm('সব মুছে ফেলবেন?')){localStorage.clear();location.reload()}">সব হিসাব মুছুন</button></div>
+<div class="box"><input id="pn" placeholder="নতুন মালের নাম"><input id="pp" type="number" placeholder="দাম"><button class="btn btnG" onclick="addP()">মাল যোগ</button></div>
+<div class="box"><div id="stockList"></div></div>
 </div>
 </div>
 
 <script>
-let products = JSON.parse(localStorage.getItem('khan_products')||'null') || [
-{name:'ফটোকপি (১ পেজ)',price:5},{name:'ছবি (পাসপোর্ট)',price:80},{name:'ছবি (স্ট্যাম্প)',price:60},
-{name:'কাগজ (A4)',price:2},{name:'স্টাম্প',price:50},{name:'কলম',price:10},
-{name:'খাতা',price:45},{name:'পেনসিল',price:10},{name:'রাবার',price:10},
-{name:'স্কেল',price:20},{name:'জুতা',price:450},{name:'স্যান্ডেল',price:250},
-{name:'ফাইল',price:25},{name:'খাম',price:5},{name:'ক্যালকুলেটর',price:350}
-];
-let sales = JSON.parse(localStorage.getItem('khan_sales')||'[]');
-let bakis = JSON.parse(localStorage.getItem('khan_baki')||'[]');
-let exps = JSON.parse(localStorage.getItem('khan_exp')||'[]');
-function save(){localStorage.setItem('khan_products',JSON.stringify(products));localStorage.setItem('khan_sales',JSON.stringify(sales));localStorage.setItem('khan_baki',JSON.stringify(bakis));localStorage.setItem('khan_exp',JSON.stringify(exps));render();}
-function show(id,btn){document.querySelectorAll('.wrap > div').forEach(d=>d.classList.add('hide'));document.getElementById(id).classList.remove('hide');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+let products=JSON.parse(localStorage.getItem('k_products')||'null')||[
+{name:'ফটোকপি (১ পেজ)',price:5},{name:'পাসপোর্ট ছবি',price:80},{name:'স্ট্যাম্প ছবি',price:60},
+{name:'কাগজ A4',price:2},{name:'স্টাম্প',price:50},{name:'কলম',price:10},{name:'খাতা',price:45},
+{name:'পেনসিল',price:10},{name:'রাবার',price:10},{name:'স্কেল',price:20},{name:'জুতা',price:450},
+{name:'স্যান্ডেল',price:250},{name:'ফাইল',price:25},{name:'খাম',price:5},{name:'ক্যালকুলেটর',price:350}];
+let customers=JSON.parse(localStorage.getItem('k_cust')||'[]');
+let trans=JSON.parse(localStorage.getItem('k_trans')||'[]');
+let exps=JSON.parse(localStorage.getItem('k_exp')||'[]');
+let sel=-1;
+function save(){localStorage.setItem('k_products',JSON.stringify(products));localStorage.setItem('k_cust',JSON.stringify(customers));localStorage.setItem('k_trans',JSON.stringify(trans));localStorage.setItem('k_exp',JSON.stringify(exps));render();}
+function show(id,b){document.querySelectorAll('.wrap>div').forEach(d=>d.classList.add('hide'));document.getElementById(id).classList.remove('hide');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');}
 function today(){return new Date().toISOString().slice(0,10)}
+function dueOf(i){return trans.filter(t=>t.cust==i).reduce((a,t)=>a+(t.type=='udhar'?t.amt:-t.amt),0)}
 function render(){
-let g=document.getElementById('productGrid');g.innerHTML='';
-products.forEach((p,i)=>{
-g.innerHTML+=`<div class="item"><b>${p.name}</b><span>${p.price}৳</span><button onclick="sell(${i})">বিক্রি +</button></div>`
-});
-let ts=sales.filter(s=>s.date==today()).reduce((a,b)=>a+b.price,0);
-let te=exps.filter(s=>s.date==today()).reduce((a,b)=>a+b.amt,0);
-let tb=bakis.reduce((a,b)=>a+b.amt,0);
-document.getElementById('todaySale').innerText=ts+'৳';
-document.getElementById('todayExp').innerText=te+'৳';
-document.getElementById('totalBaki').innerText=tb+'৳';
-document.getElementById('saleList').innerHTML = sales.slice().reverse().slice(0,20).map(s=>`<div class="row"><span>${s.name} <br><span class="small">${s.cust||'ক্রেতা'} • ${s.type=='baki'?'বাকি':'নগদ'}</span></span><b>${s.price}৳</b></div>`).join('')||'এখনো বিক্রি নাই';
-document.getElementById('bakiList').innerHTML = bakis.map((b,i)=>`<div class="row"><span><b>${b.name}</b><br><span class="small">${b.note||''} • ${b.date}</span></span><span><b>${b.amt}৳</b><br><button onclick="paidBaki(${i})" style="background:#16a34a;color:#fff;border:0;padding:5px 10px;border-radius:6px;margin-top:4px">টাকা পাইছি</button></span></div>`).join('')||'কোনো বাকি নাই';
-document.getElementById('stockList').innerHTML = products.map((p,i)=>`<div class="row"><span>${p.name}</span><b>${p.price}৳ <button onclick="delP(${i})" style="background:#dc2626;color:#fff;border:0;padding:4px 8px;border-radius:6px">✕</button></b></div>`).join('');
-document.getElementById('allHisab').innerHTML = `<div class="row"><span>মোট বিক্রি</span><b>${sales.reduce((a,b)=>a+b.price,0)}৳</b></div><div class="row"><span>মোট বাকি</span><b>${tb}৳</b></div><div class="row"><span>মোট খরচ</span><b>${exps.reduce((a,b)=>a+b.amt,0)}৳</b></div>` + exps.slice().reverse().map(e=>`<div class="row"><span>${e.note}<br><span class="small">${e.date}</span></span><b class="red">-${e.amt}৳</b></div>`).join('');
+let g=document.getElementById('pGrid');g.innerHTML='';products.forEach((p,i)=>{g.innerHTML+=`<div class="item"><b>${p.name}</b><div>${p.price}৳</div><button onclick="sell(${i})">বিক্রি +</button></div>`});
+document.getElementById('custList').innerHTML=customers.map((c,i)=>{let d=dueOf(i);return `<div class="cust" onclick="openCust(${i})"><div style="display:flex;justify-content:space-between"><b>👤 ${c.name}</b><span class="pill" style="background:${d>0?'#d92d20':d<0?'#16a34a':'#64748b'}">${d>0?d+'৳ পাবো':d<0?Math.abs(d)+'৳ অগ্রিম':'পরিশোধ'}</span></div><div class="small">${c.phone||''} • ${trans.filter(t=>t.cust==i).length}টি লেনদেন</div></div>`}).join('')||'এখনো কোনো খাতা নাই। উপরে নাম লিখে খাতা খুলুন।';
+document.getElementById('stockList').innerHTML=products.map((p,i)=>`<div class="row"><span>${p.name}</span><b>${p.price}৳ <button onclick="delP(${i})" style="background:#d92d20;color:#fff;border:0;padding:4px 8px;border-radius:6px">✕</button></b></div>`).join('');
+let ti=trans.filter(t=>t.date==today()&&t.type=='joma').reduce((a,b)=>a+b.amt,0);
+let to=trans.filter(t=>t.date==today()&&t.type=='udhar').reduce((a,b)=>a+b.amt,0);
+let td=customers.reduce((a,_,i)=>a+Math.max(0,dueOf(i)),0);
+document.getElementById('todayIn').innerText=ti+'৳';document.getElementById('todayOut').innerText=to+'৳';document.getElementById('totalDue').innerText=td+'৳';
+document.getElementById('cashList').innerHTML=trans.slice().reverse().slice(0,30).map(t=>`<div class="row"><span>${customers[t.cust]?.name||'মুছে গেছে'}<br><span class="small">${t.note} • ${t.date}</span></span><b style="color:${t.type=='udhar'?'#d92d20':'#16a34a'}">${t.type=='udhar'?'-':'+'}${t.amt}৳</b></div>`).join('')+exps.slice().reverse().map(e=>`<div class="row"><span>${e.note}<br><span class="small">খরচ • ${e.date}</span></span><b style="color:#d92d20">-${e.amt}৳</b></div>`).join('')||'আজ কোনো লেনদেন নাই';
+if(sel>=0&&customers[sel]){document.getElementById('detailName').innerText='📒 '+customers[sel].name+' এর খাতা';let d=dueOf(sel);document.getElementById('detailDue').innerText=d>0?`আপনি পাবেন ${d}৳`:d<0?`অগ্রিম আছে ${Math.abs(d)}৳`:'কোনো বাকি নাই';document.getElementById('transList').innerHTML=trans.filter(t=>t.cust==sel).slice().reverse().map(t=>`<div class="row"><span>${t.type=='udhar'?'❌ বাকি দিলাম':'✅ টাকা পাইলাম'}<br><span class="small">${t.note} • ${t.date}</span></span><b style="color:${t.type=='udhar'?'#d92d20':'#16a34a'}">${t.type=='udhar'?'-':'+'}${t.amt}৳</b></div>`).join('')||'এই খাতায় এখনো লেনদেন নাই';}
 }
-function sell(i){
-let p=products[i];let cust=document.getElementById('custName').value;let type=document.getElementById('payType').value;
-sales.push({name:p.name,price:p.price,cust:cust,type:type,date:today()});
-if(type=='baki'){bakis.push({name:cust||'নাম নাই',amt:p.price,note:p.name,date:today()});alert(p.name+' বাকিতে লেখা হইছে');}
-else alert(p.name+' বিক্রি হইছে - '+p.price+'৳');
-save();
-}
-function addBaki(){let n=document.getElementById('bakiName').value;let a=+document.getElementById('bakiAmt').value;let note=document.getElementById('bakiNote').value;if(!n||!a)return alert('নাম আর টাকা দেন');bakis.push({name:n,amt:a,note:note,date:today()});save();}
-function paidBaki(i){bakis.splice(i,1);save();alert('বাকি শোধ হইছে');}
-function addProduct(){let n=document.getElementById('newName').value;let pr=+document.getElementById('newPrice').value;if(!n||!pr)return alert('নাম আর দাম দেন');products.push({name:n,price:pr});save();}
+function addCust(){let n=document.getElementById('newCust').value.trim();if(!n)return alert('নাম লিখুন');customers.push({name:n,phone:document.getElementById('newPhone').value});save();document.getElementById('newCust').value='';}
+function openCust(i){sel=i;document.getElementById('detailBox').style.display='block';render();document.getElementById('detailBox').scrollIntoView({behavior:'smooth'});}
+function trans(type){if(sel<0)return;let a=+document.getElementById('amt').value;let n=document.getElementById('note').value||(type=='udhar'?'বাকি':'জমা');if(!a)return alert('টাকা লিখুন');trans.push({cust:sel,amt:a,note:n,type:type,date:today()});save();document.getElementById('amt').value='';document.getElementById('note').value='';}
+function sell(i){let p=products[i];let name=document.getElementById('custName').value.trim();let type=document.getElementById('payType').value;
+if(type=='baki'){let idx=customers.findIndex(c=>c.name==name);if(idx<0){if(!name)return alert('বাকির জন্য নাম লিখুন');customers.push({name:name,phone:''});idx=customers.length-1;}trans.push({cust:idx,amt:p.price,note:p.name+' (বিক্রি)',type:'udhar',date:today()});alert(p.name+' - '+p.price+'৳ বাকিতে লেখা হইছে');}
+else{trans.push({cust:-1,amt:p.price,note:p.name+' (নগদ বিক্রি)',type:'joma',date:today()});alert(p.name+' বিক্রি হইছে - '+p.price+'৳');}save();}
+function addExp(){let n=document.getElementById('expNote').value;let a=+document.getElementById('expAmt').value;if(!n||!a)return alert('লিখুন');exps.push({note:n,amt:a,date:today()});save();}
+function addP(){let n=document.getElementById('pn').value;let pr=+document.getElementById('pp').value;if(!n||!pr)return alert('নাম আর দাম দিন');products.push({name:n,price:pr});save();}
 function delP(i){products.splice(i,1);save();}
-function addExp(){let n=document.getElementById('expNote').value;let a=+document.getElementById('expAmt').value;if(!n||!a)return alert('লিখেন');exps.push({note:n,amt:a,date:today()});save();}
 render();
 </script>
 </body>
