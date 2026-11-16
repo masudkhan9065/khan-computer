@@ -1,55 +1,135 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Khan Computer & Stationary</title><script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script><style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}body{background:#050816;display:flex;justify-content:center;color:#fff}.app{width:100%;max-width:520px;min-height:100vh;background:linear-gradient(180deg,#0B1030 0%,#0A0F2A 40%,#060A1E 100%);padding-bottom:20px}.top{padding:18px 14px 12px;background:linear-gradient(135deg,#6D28D9,#2563EB 55%,#06B6D4);border-radius:0 0 22px 22px;box-shadow:0 10px 30px rgba(37,99,235,.4);position:sticky;top:0;z-index:10}.top h1{font-size:21px;line-height:1.2}.top h1 span{font-size:12px;font-weight:400;opacity:.95;display:block;margin-top:3px;line-height:1.5}.top .row{display:flex;gap:8px;margin-top:12px}.pill{flex:1;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:8px;text-align:center;cursor:pointer}.pill b{font-size:15px;display:block}.pill small{font-size:11px;opacity:.9}.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}.card{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:12px;cursor:pointer}.card small{font-size:11px;color:#C7D2FE}.card h2{font-size:19px;margin-top:4px}.card p{font-size:11px;color:#94A3B8;margin-top:2px}.tabs{display:flex;gap:6px;padding:0 12px;flex-wrap:wrap}.tab{flex:1;background:#141B3D;color:#E2E8F0;border:1px solid #26315E;padding:9px 4px;border-radius:999px;font-size:11px;cursor:pointer;text-align:center;white-space:nowrap}.tab.on{background:#fff;color:#111;font-weight:800}.section{margin:12px;background:#0E1533;border:1px solid #1E2A55;border-radius:18px;padding:12px;display:none}.section.on{display:block}.inp{width:100%;padding:10px;border-radius:10px;border:1px solid #2A3766;background:#0A0F2A;color:#fff;margin-bottom:8px;font-size:13px;outline:none}.inp:focus{border-color:#6366F1}.btn{width:100%;padding:11px;border:none;border-radius:12px;font-weight:800;font-size:13px;cursor:pointer;margin-bottom:8px}.btnP{background:linear-gradient(90deg,#7C3AED,#2563EB);color:#fff}.btnG{background:#059669;color:#fff}.btnY{background:#FACC15;color:#000}.btnR{background:#DC2626;color:#fff}.btnD{background:#1E293B;color:#fff;border:1px solid #334155}.list{background:#0A0F2A;border:1px solid #1E2A55;border-radius:14px;padding:10px;margin-bottom:8px;line-height:1.6;font-size:13px}.small{font-size:11px;color:#94A3B8}.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:800}.st-জমা{background:#F59E0B;color:#000}.st-কাজ_চলছে{background:#3B82F6;color:#fff}.st-রেডি{background:#22C55E;color:#000}.st-ডেলিভারি{background:#94A3B8;color:#000}.st-বাতিল{background:#EF4444;color:#fff}.act button,.act a{border:none;padding:5px 8px;border-radius:8px;font-size:11px;margin:3px 3px 0 0;cursor:pointer;text-decoration:none;display:inline-block;color:#fff}.callBtn{background:#059669!important}.flt{display:flex;gap:6px;margin-bottom:8px}.flt button{flex:1;padding:8px;border:none;border-radius:999px;font-weight:800;font-size:11px;cursor:pointer;background:#1E293B;color:#fff}.flt button.on{outline:2px solid #fff}#login{position:fixed;inset:0;background:#050816;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}#login h2{font-size:26px;background:linear-gradient(90deg,#A78BFA,#60A5FA,#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent}#login p{color:#94A3B8;font-size:13px;margin:10px 0 16px;line-height:1.6}#printArea{background:#fff!important;color:#111!important}#printArea table{width:100%;border-collapse:collapse}#printArea th{background:#111827!important;color:#fff!important;padding:9px 4px;font-size:12px;border:1px solid #111827}#printArea td{padding:9px 5px;text-align:center;border:1px solid #D1D5DB;font-size:13px}#printArea td.name{text-align:left;font-weight:700}.invoice{border:2px solid #111827;border-radius:12px;padding:14px;color:#111;background:#fff}.invoice h2{font-size:20px}.invoice .row{display:flex;justify-content:space-between;font-size:13px;margin-top:6px}.invoice .total{border-top:2px dashed #111827;margin-top:10px;padding-top:8px;font-weight:800}@media print{body{background:#fff}.app{max-width:100%;background:#fff;color:#000}.noPrint,.top,.cards,.tabs{display:none!important}.section{display:none!important}.section.printShow{display:block!important;background:#fff!important;border:none}.section.printShow *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}</style></head><body>
-<div id="login"><h2>💻 KHAN<br>Computer & Stationary</h2><p>চৌধুরী মার্কেট, তালমা মোড়, ফরিদপুর<br>📞 01723339065</p><input id="loginPass" type="password" placeholder="পাসওয়ার্ড দিন" class="inp" style="max-width:300px"><button class="btn btnP" style="max-width:300px" onclick="doLogin()">🔓 ঢুকুন</button><p id="loginMsg" style="color:#F87171"></p></div>
-<div class="app">
-<div class="top noPrint"><h1>💻 KHAN Computer & Stationary <span>কম্পিউটার • মোবাইল সার্ভিসিং ও স্টেশনারি<br>চৌধুরী মার্কেট, তালমা মোড়, ফরিদপুর • 📞 01723339065</span></h1><div class="row"><div class="pill" onclick="showTab('jobs',null)"><small>👥 মোট কাস্টমার</small><b id="totalCust">0 জন</b></div><div class="pill" onclick="showTab('jobs',null)"><small>🔧 পেন্ডিং জব</small><b id="pendingTop">0 টি</b></div><div class="pill" onclick="showTab('report',null)"><small>📅 আজ</small><b id="todayLabel">-</b></div></div></div>
-<div class="cards noPrint"><div class="card blue" onclick="showTab('report',null)"><small>💰 আজকের ইনকাম</small><h2 id="todayInc">৳0</h2><p>আজকে জমা + অ্যাডভান্স</p></div><div class="card red" onclick="showTab('due',null)"><small>🔴 মোট বকেয়া</small><h2 id="totalDue">৳0</h2><p>কাস্টমারের কাছে পাবো</p></div><div class="card orange" onclick="showTab('jobs',null)"><small>🛠️ কাজ চলছে / জমা</small><h2 id="pendingJobs">0 টি</h2><p>ডেলিভারি বাকি</p></div><div class="card green" onclick="showTab('report',null)"><small>✅ আজ ডেলিভারি</small><h2 id="todayDel">0 টি</h2><p>আজকে ডেলিভারি হইছে</p></div></div>
-<div class="tabs noPrint"><button class="tab on" onclick="showTab('jobs',this)">🔧 সার্ভিস জব</button><button class="tab" onclick="showTab('cust',this)">👥 কাস্টমার</button><button class="tab" onclick="showTab('due',this)">🔴 বকেয়া</button><button class="tab" onclick="showTab('acc',this)">💰 আয়-ব্যয়</button><button class="tab" onclick="showTab('report',this)">📊 রিপোর্ট</button></div>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>খান কম্পিউটার - দোকান হিসাব</title>
+<style>
+*{box-sizing:border-box;font-family:Hind Siliguri,Arial,sans-serif}
+body{margin:0;background:#f1f5f9;color:#111}
+header{background:#0f172a;color:#fff;padding:14px;text-align:center;position:sticky;top:0;z-index:10}
+header h1{margin:0;font-size:22px} header p{margin:2px 0 0;font-size:13px;opacity:.8}
+.top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px}
+.card{background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 8px #0001}
+.card b{font-size:20px;display:block} .green{color:#16a34a}.red{color:#dc2626}.orange{color:#ea580c}
+.tabs{display:flex;gap:6px;padding:0 10px;overflow:auto}
+.tabs button{flex:1;white-space:nowrap;padding:10px;border:0;border-radius:10px;background:#e2e8f0;font-weight:700;cursor:pointer}
+.tabs button.active{background:#0f172a;color:#fff}
+.wrap{padding:10px}
+.box{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 2px 8px #0001}
+h3{margin:0 0 10px} input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;margin-bottom:8px;font-size:15px}
+.btn{width:100%;padding:12px;border:0;border-radius:10px;background:#16a34a;color:#fff;font-weight:700;font-size:16px;cursor:pointer}
+.btn2{background:#0f172a}.btn3{background:#dc2626}.btn4{background:#f59e0b}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.item{border:1px solid #e2e8f0;border-radius:12px;padding:10px;text-align:center;background:#fff}
+.item b{display:block;font-size:16px}.item span{color:#666;font-size:13px}
+.item button{margin-top:8px;width:100%;padding:9px;border:0;border-radius:8px;background:#0f172a;color:#fff;font-weight:700}
+.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed #e2e8f0;font-size:14px}
+.small{font-size:12px;color:#666} .flex{display:flex;gap:6px}
+.flex button{flex:1;padding:9px;border:0;border-radius:8px;color:#fff;font-weight:700}
+.hide{display:none}
+</style>
+</head>
+<body>
+<header><h1>🏪 খান কম্পিউটার & স্টেশনারি</h1><p>বিক্রি • বাকি • আয়-ব্যয় হিসাব</p></header>
 
-<div id="jobs" class="section on"><h3>🔧 নতুন সার্ভিস জব</h3><input id="jSearchCust" placeholder="🔍 কাস্টমার খুঁজুন - নাম / মোবাইল" class="inp" oninput="filterJobCust()"><select id="jCust" class="inp"></select><div id="jCustInfo" class="small"></div><select id="jDevice" class="inp"><option>📱 মোবাইল</option><option>💻 ল্যাপটপ</option><option>🖥️ ডেস্কটপ / PC</option><option>🖨️ প্রিন্টার</option><option>⌚ স্মার্ট ওয়াচ</option><option>📷 অন্যান্য</option></select><input id="jModel" placeholder="মডেল - যেমন: Samsung A54 / HP ProBook" class="inp"><input id="jProblem" placeholder="সমস্যা কি? - ডিসপ্লে / ব্যাটারি / সফটওয়্যার / চার্জিং..." class="inp"><input id="jPass" placeholder="প্যাটার্ন / পাসওয়ার্ড (যদি থাকে)" class="inp"><div style="display:flex;gap:6px"><input id="jTotal" type="number" placeholder="মোট বিল ৳" class="inp"><input id="jAdv" type="number" placeholder="অ্যাডভান্স ৳" class="inp"></div><input id="jDate" type="date" class="inp"><select id="jStatus" class="inp"><option>জমা</option><option>কাজ চলছে</option><option>রেডি</option><option>ডেলিভারি</option></select><button class="btn btnP" onclick="addJob()">+ জব যোগ করুন</button><div class="flt"><button class="fltBtn on" onclick="setJobFilter('all',this)">সব</button><button onclick="setJobFilter('জমা',this)">জমা</button><button onclick="setJobFilter('কাজ চলছে',this)">কাজ চলছে</button><button onclick="setJobFilter('রেডি',this)">রেডি</button><button onclick="setJobFilter('ডেলিভারি',this)">ডেলিভারি</button></div><input id="jobSearch" placeholder="🔍 জব খুঁজুন - নাম / মডেল / সমস্যা" class="inp" oninput="render()"><div id="jobList"></div></div>
+<div class="top">
+<div class="card">আজ বিক্রি<b class="green" id="todaySale">০৳</b></div>
+<div class="card">মোট বাকি<b class="orange" id="totalBaki">০৳</b></div>
+<div class="card">আজ খরচ<b class="red" id="todayExp">০৳</b></div>
+</div>
 
-<div id="cust" class="section"><h3>👥 নতুন কাস্টমার</h3><input id="cName" placeholder="নাম" class="inp"><input id="cMob" placeholder="মোবাইল" class="inp"><input id="cAddr" placeholder="ঠিকানা" class="inp"><button class="btn btnG" onclick="addCustomer()">+ কাস্টমার যোগ</button><button class="btn btnY" onclick="printCustomers()">🖨️ কাস্টমার প্রিন্ট</button><input id="cSearch" placeholder="🔍 খুঁজুন" class="inp" oninput="render()"><div id="custList"></div></div>
+<div class="tabs">
+<button onclick="show('sell',this)" class="active">🛒 বিক্রি</button>
+<button onclick="show('baki',this)">� دفتر বাকি</button>
+<button onclick="show('stock',this)">📦 মাল / স্টক</button>
+<button onclick="show('hisab',this)">💰 আয়-ব্যয়</button>
+</div>
 
-<div id="due" class="section"><h3>🔴 বকেয়া লিস্ট</h3><button class="btn btnY" onclick="printDue()">🖨️ বকেয়া প্রিন্ট</button><div id="dueList"></div></div>
+<div class="wrap">
+<!-- SELL -->
+<div id="sell">
+<div class="box">
+<input id="custName" placeholder="ক্রেতার নাম (না দিলেও হবে)">
+<select id="payType"><option value="cash">💵 নগদ বিক্রি</option><option value="baki">� دفتر বাকি বিক্রি</option></select>
+</div>
+<div class="grid" id="productGrid"></div>
+<div class="box"><h3>🧾 আজকের বিক্রি</h3><div id="saleList"></div></div>
+</div>
 
-<div id="acc" class="section"><h3>💰 আয়-ব্যয়</h3><input id="aDate" type="date" class="inp"><input id="aDesc" placeholder="বিবরণ - যেমন: পার্টস কিনলাম / দোকান ভাড়া" class="inp"><input id="aAmt" type="number" placeholder="টাকা" class="inp"><select id="aType" class="inp"><option value="inc">আয় (+)</option><option value="exp">ব্যয় (-)</option></select><button class="btn btnP" onclick="addAcc()">+ যোগ</button><div id="accList"></div></div>
+<!-- BAKI -->
+<div id="baki" class="hide">
+<div class="box"><h3>➕ নতুন বাকি যোগ</h3>
+<input id="bakiName" placeholder="নাম লিখুন - যেমন: রহিম">
+<input id="bakiAmt" type="number" placeholder="টাকার পরিমাণ">
+<input id="bakiNote" placeholder="কি নিলো? যেমন: ২টা খাতা">
+<button class="btn btn2" onclick="addBaki()">বাকি যোগ করুন</button></div>
+<div class="box"><h3>📋 বাকির খাতা</h3><div id="bakiList"></div></div>
+</div>
 
-<div id="report" class="section"><h3>📊 রিপোর্ট</h3><input id="repDate" type="date" class="inp" onchange="renderReport()"><div id="reportBody"></div><button class="btn btnY" onclick="printReport()">🖨️ রিপোর্ট প্রিন্ট</button></div>
+<!-- STOCK -->
+<div id="stock" class="hide">
+<div class="box"><h3>➕ নতুন মাল যোগ</h3>
+<input id="newName" placeholder="মালের নাম - যেমন: রাবার">
+<input id="newPrice" type="number" placeholder="দাম - যেমন: ২০">
+<button class="btn" onclick="addProduct()">মাল যোগ করুন</button></div>
+<div class="box"><h3>📦 দোকানের মাল</h3><div id="stockList"></div></div>
+</div>
 
-<div id="printArea" class="section"><div id="printBody"></div><button class="btn btnP noPrint" onclick="window.print()">🖨️ প্রিন্ট করুন</button><button class="btn btnD noPrint" onclick="showTab('jobs',document.querySelector('.tab'))">ফিরে যান</button></div>
-<div style="text-align:center;padding:12px" class="noPrint"><a href="tel:01723339065" style="background:#fff;color:#000;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:800">📞 01723339065</a> <button onclick="logout()" style="background:#DC2626;color:#fff;border:none;padding:10px 16px;border-radius:999px;font-weight:800;margin-left:6px">লগআউট</button><p style="font-size:11px;color:#94A3B8;margin-top:8px">চৌধুরী মার্কেট, তালমা মোড়, ফরিদপুর</p></div></div>
+<!-- HISAB -->
+<div id="hisab" class="hide">
+<div class="box"><h3>➕ খরচ যোগ</h3>
+<input id="expNote" placeholder="কিসে খরচ? যেমন: কাগজ কিনলাম">
+<input id="expAmt" type="number" placeholder="টাকা">
+<button class="btn btn3" onclick="addExp()">খরচ যোগ করুন</button></div>
+<div class="box"><h3>📊 সব হিসাব</h3><div id="allHisab"></div>
+<button class="btn btn4" style="margin-top:10px" onclick="if(confirm('সব মুছে ফেলবেন?')){localStorage.clear();location.reload()}">সব হিসাব মুছুন</button></div>
+</div>
+</div>
+
 <script>
-var PASS="1234";var ROLE=localStorage.getItem("KHAN_ROLE")||"";
-var D=JSON.parse(localStorage.getItem("KHAN_V2")||"null");if(!D)D={customers:[],jobs:[],acc:[]};
-var jobFilter="all";
-function TS(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
-function fmt(n){return "৳"+Number(n||0).toLocaleString()}
-function save(){localStorage.setItem("KHAN_V2",JSON.stringify(D))}
-function doLogin(){var p=document.getElementById("loginPass").value;if(p===PASS){localStorage.setItem("KHAN_ROLE","admin");document.getElementById("login").style.display="none";initDates();render();renderReport()}else{document.getElementById("loginMsg").innerText="ভুল পাসওয়ার্ড! (ডেমো: 1234)"}}
-function logout(){localStorage.removeItem("KHAN_ROLE");document.getElementById("login").style.display="flex"}
-if(ROLE){document.getElementById("login").style.display="none"}
-function initDates(){var t=TS();["jDate","aDate","repDate"].forEach(function(id){var e=document.getElementById(id);if(e&&!e.value)e.value=t});document.getElementById("todayLabel").innerText=t}
-function showTab(id,btn){document.querySelectorAll(".section").forEach(function(s){s.classList.remove("on","printShow")});document.getElementById(id).classList.add("on");document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("on")});if(btn)btn.classList.add("on");if(id=='report')renderReport()}
-function openPrint(h){document.getElementById("printBody").innerHTML=h;document.querySelectorAll(".section").forEach(function(s){s.classList.remove("on")});document.getElementById("printArea").classList.add("on","printShow")}
-function setJobFilter(f,btn){jobFilter=f;document.querySelectorAll(".flt button").forEach(function(b){b.classList.remove("on")});if(btn)btn.classList.add("on");render()}
-function addCustomer(){var n=document.getElementById("cName").value.trim(),m=document.getElementById("cMob").value.trim(),a=document.getElementById("cAddr").value.trim();if(!n||!m)return alert("নাম ও মোবাইল দিন");var id=D.customers.length?Math.max.apply(null,D.customers.map(function(x){return x.id}))+1:1;D.customers.push({id:id,name:n,mob:m,addr:a});save();render();["cName","cMob","cAddr"].forEach(function(x){document.getElementById(x).value=""})}
-function filterJobCust(){var q=(document.getElementById("jSearchCust").value||"").toLowerCase();var f=D.customers.filter(function(c){return (c.name+" "+c.mob).toLowerCase().includes(q)});document.getElementById("jCust").innerHTML=f.map(function(c){return '<option value="'+c.id+'">'+c.id+'. '+c.name+' - '+c.mob+'</option>'}).join("")||'<option value="">কাস্টমার নাই - আগে কাস্টমার যোগ করুন</option>';updateJobInfo()}
-function updateJobInfo(){var id=parseInt(document.getElementById("jCust").value);var c=D.customers.find(function(x){return x.id==id});document.getElementById("jCustInfo").innerHTML=c?'✅ <b>'+c.name+'</b> | '+c.mob+' | '+c.addr:''}
-document.addEventListener("change",function(e){if(e.target.id=="jCust")updateJobInfo()});
-function addJob(){var cid=parseInt(document.getElementById("jCust").value);var c=D.customers.find(function(x){return x.id==cid});if(!c)return alert("কাস্টমার বাছুন");var dev=document.getElementById("jDevice").value,model=document.getElementById("jModel").value.trim(),prob=document.getElementById("jProblem").value.trim(),pass=document.getElementById("jPass").value.trim(),tot=parseInt(document.getElementById("jTotal").value||0),adv=parseInt(document.getElementById("jAdv").value||0),date=document.getElementById("jDate").value,st=document.getElementById("jStatus").value;if(!model||!prob)return alert("মডেল ও সমস্যা লিখুন");D.jobs.push({id:Date.now(),cid:cid,name:c.name,mob:c.mob,addr:c.addr,device:dev,model:model,problem:prob,pass:pass,total:tot,adv:adv,due:tot-adv,date:date,status:st});save();render();renderReport();["jModel","jProblem","jPass","jTotal","jAdv"].forEach(function(x){document.getElementById(x).value=""});alert("✅ জব যোগ হইছে - "+c.name+" | বাকি "+fmt(tot-adv))}
-function payDueJob(id){var j=D.jobs.find(function(x){return x.id==id});var amt=parseInt(prompt(j.name+" কত টাকা দিলো? বাকি "+j.due,j.due));if(!amt)return;j.adv+=amt;j.due=j.total-j.adv;if(j.due<=0){j.due=0;j.status="ডেলিভারি"}save();render();renderReport()}
-function changeStatus(id){var j=D.jobs.find(function(x){return x.id==id});var ns=prompt("স্ট্যাটাস বদলান:\nজমা / কাজ চলছে / রেডি / ডেলিভারি / বাতিল",j.status);if(ns==null)return;j.status=ns;save();render();renderReport()}
-function editJob(id){var j=D.jobs.find(function(x){return x.id==id});var t=parseInt(prompt("মোট বিল:",j.total));if(t==null||isNaN(t))return;var a=parseInt(prompt("অ্যাডভান্স:",j.adv));if(a==null||isNaN(a))return;j.total=t;j.adv=a;j.due=Math.max(0,t-a);save();render();renderReport()}
-function delJob(id){if(!confirm("ডিলিট করবেন?"))return;D.jobs=D.jobs.filter(function(x){return x.id!=id});save();render();renderReport()}
-function delCust(id){if(!confirm("কাস্টমার ডিলিট?"))return;D.customers=D.customers.filter(function(x){return x.id!=id});save();render()}
-function addAcc(){var d=document.getElementById("aDate").value,desc=document.getElementById("aDesc").value,amt=parseInt(document.getElementById("aAmt").value),tp=document.getElementById("aType").value;if(!desc||!amt)return alert("বিবরণ ও টাকা দিন");D.acc.push({id:Date.now(),date:d,desc:desc,amt:amt,type:tp});save();render();renderReport();document.getElementById("aDesc").value="";document.getElementById("aAmt").value=""}
-function delAcc(id){D.acc=D.acc.filter(function(x){return x.id!=id});save();render();renderReport()}
-function render(){var q=(document.getElementById("cSearch").value||"").toLowerCase();var ch="";D.customers.filter(function(c){return (c.name+c.mob+c.addr).toLowerCase().includes(q)}).forEach(function(c){ch+='<div class="list"><b>'+c.id+'. '+c.name+'</b><br><span class="small">📞 '+c.mob+' | '+c.addr+'</span><br><div class="act"><a class="callBtn" href="tel:'+c.mob+'">📞 কল</a><button style="background:#DC2626" onclick="delCust('+c.id+')">ডিলিট</button></div></div>'});document.getElementById("custList").innerHTML=ch||"<p class='small'>কাস্টমার নাই</p>";filterJobCust();var jq=(document.getElementById("jobSearch").value||"").toLowerCase();var jh="";D.jobs.filter(function(j){var ok=jobFilter=="all"||j.status==jobFilter;return ok&&(j.name+j.mob+j.model+j.problem).toLowerCase().includes(jq)}).slice().reverse().forEach(function(j){var cls=j.status.replace(" ","_");jh+='<div class="list"><div style="display:flex;justify-content:space-between"><b>#'+j.id.toString().slice(-4)+' • '+j.name+'</b><span class="badge st-'+cls+'">'+j.status+'</span></div><span class="small">📞 '+j.mob+' | 📅 '+j.date+'</span><br><b>'+j.device+' - '+j.model+'</b><br>🛠️ '+j.problem+(j.pass?' | 🔑 '+j.pass:'')+'<br>💰 মোট: <b>'+fmt(j.total)+'</b> | অ্যাডভান্স: '+fmt(j.adv)+' | <span style="color:#F87171;font-weight:800">বাকি: '+fmt(j.due)+'</span><div class="act"><a class="callBtn" href="tel:'+j.mob+'">📞 কল</a><button style="background:#059669" onclick="payDueJob('+j.id+')">💵 টাকা জমা</button><button style="background:#2563EB" onclick="changeStatus('+j.id+')">🔄 স্ট্যাটাস</button><button style="background:#F59E0B;color:#000" onclick="editJob('+j.id+')">ঠিক</button><button style="background:#7C3AED" onclick="printInvoice('+j.id+')">🧾 বিল</button><button style="background:#DC2626" onclick="delJob('+j.id+')">X</button></div></div>'});document.getElementById("jobList").innerHTML=jh||"<p class='small'>এই স্ট্যাটাসে জব নাই</p>";var dh="";D.jobs.filter(function(j){return j.due>0}).forEach(function(j){dh+='<div class="list"><b>'+j.name+' - '+j.model+'</b> | '+j.mob+'<br>বাকি: <b style="color:#F87171">'+fmt(j.due)+'</b> | স্ট্যাটাস: '+j.status+' <button style="background:#059669;color:#fff;border:none;padding:5px 10px;border-radius:8px" onclick="payDueJob('+j.id+')">টাকা জমা</button></div>'});document.getElementById("dueList").innerHTML=dh||"<p class='small'>✅ বকেয়া নাই</p>";var ah="";D.acc.slice().reverse().forEach(function(a){ah+='<div class="list">'+a.date+' - '+a.desc+' - '+(a.type=='inc'?'+':'-')+' '+fmt(a.amt)+' <button style="background:#DC2626;color:#fff;border:none;padding:3px 8px;border-radius:6px" onclick="delAcc('+a.id+')">X</button></div>'});document.getElementById("accList").innerHTML=ah||"<p class='small'>আয়-ব্যয় নাই</p>";var today=TS();var todayJobs=D.jobs.filter(function(j){return j.date==today});var tInc=todayJobs.reduce(function(a,j){return a+j.adv},0)+D.acc.filter(function(a){return a.date==today&&a.type=='inc'}).reduce(function(a,x){return a+x.amt},0);var tDue=D.jobs.reduce(function(a,j){return a+j.due},0);var pend=D.jobs.filter(function(j){return j.status!='ডেলিভারি'&&j.status!='বাতিল'}).length;var tDel=D.jobs.filter(function(j){return j.date==today&&j.status=='ডেলিভারি'}).length;document.getElementById("todayInc").innerText=fmt(tInc);document.getElementById("totalDue").innerText=fmt(tDue);document.getElementById("pendingJobs").innerText=pend+" টি";document.getElementById("todayDel").innerText=tDel+" টি";document.getElementById("totalCust").innerText=D.customers.length+" জন";document.getElementById("pendingTop").innerText=pend+" টি"}
-function renderReport(){var d=document.getElementById("repDate").value||TS();var jobs=D.jobs.filter(function(j){return j.date==d});var inc=jobs.reduce(function(a,j){return a+j.adv},0)+D.acc.filter(function(a){return a.date==d&&a.type=='inc'}).reduce(function(a,x){return a+x.amt},0);var exp=D.acc.filter(function(a){return a.date==d&&a.type=='exp'}).reduce(function(a,x){return a+x.amt},0);document.getElementById("reportBody").innerHTML='<div style="background:#0A0F2A;padding:12px;border-radius:12px;line-height:1.8"><b>📅 '+d+'</b><br>🔧 মোট জব: '+jobs.length+' টি<br>💰 ইনকাম: '+fmt(inc)+'<br>💸 ব্যয়: '+fmt(exp)+'<br><b>লাভ: '+fmt(inc-exp)+'</b><br>🔴 বকেয়া: '+fmt(jobs.reduce(function(a,j){return a+j.due},0))+'</div>'}
-function printInvoice(id){var j=D.jobs.find(function(x){return x.id==id});openPrint('<div class="invoice"><h2>💻 KHAN Computer & Stationary</h2><p style="font-size:12px;color:#666">চৌধুরী মার্কেট, তালমা মোড়, ফরিদপুর • 📞 01723339065</p><hr><div class="row"><span>বিল নং: #'+j.id.toString().slice(-4)+'</span><span>তারিখ: '+j.date+'</span></div><div class="row"><span>কাস্টমার: <b>'+j.name+'</b></span><span>📞 '+j.mob+'</span></div><div class="row"><span>ঠিকানা: '+j.addr+'</span></div><div class="row"><span>ডিভাইস: '+j.device+' - '+j.model+'</span></div><div class="row"><span>সমস্যা: '+j.problem+'</span></div><div class="row"><span>স্ট্যাটাস: '+j.status+'</span></div><div class="total"><div class="row"><span>মোট বিল</span><span>'+fmt(j.total)+'</span></div><div class="row"><span>অ্যাডভান্স</span><span>'+fmt(j.adv)+'</span></div><div class="row"><span>বাকি</span><span>'+fmt(j.due)+'</span></div></div><p style="text-align:center;font-size:12px;margin-top:12px">ধন্যবাদ! আবার আসবেন 🙏<br>--- স্বাক্ষর ---</p></div>')}
-function printCustomers(){openPrint('<h3 style="text-align:center">কাস্টমার লিস্ট<br><span style="font-size:12px">KHAN Computer & Stationary - তালমা মোড়, ফরিদপুর</span></h3><table><tr><th>ক্রমিক</th><th>নাম</th><th>মোবাইল</th><th>ঠিকানা</th></tr>'+D.customers.map(function(c,i){return '<tr><td>'+(i+1)+'</td><td class="name">'+c.name+'</td><td>'+c.mob+'</td><td>'+c.addr+'</td></tr>'}).join("")+'</table>')}
-function printDue(){var l=D.jobs.filter(function(j){return j.due>0});openPrint('<h3 style="text-align:center">বকেয়া লিস্ট</h3><table><tr><th>ক্রমিক</th><th>নাম</th><th>ডিভাইস</th><th>বাকি</th></tr>'+l.map(function(j,i){return '<tr><td>'+(i+1)+'</td><td class="name">'+j.name+'</td><td>'+j.model+'</td><td>'+j.due+'</td></tr>'}).join("")+'</table>')}
-function printReport(){var d=document.getElementById("repDate").value||TS();var jobs=D.jobs.filter(function(j){return j.date==d});openPrint('<h3 style="text-align:center">'+d+' রিপোর্ট</h3><table><tr><th>ক্রমিক</th><th>নাম</th><th>ডিভাইস</th><th>মোট</th><th>জমা</th><th>বাকি</th><th>স্ট্যাটাস</th></tr>'+jobs.map(function(j,i){return '<tr><td>'+(i+1)+'</td><td class="name">'+j.name+'</td><td>'+j.model+'</td><td>'+j.total+'</td><td>'+j.adv+'</td><td>'+j.due+'</td><td>'+j.status+'</td></tr>'}).join("")+'</table>')}
-initDates();render();renderReport();
+let products = JSON.parse(localStorage.getItem('khan_products')||'null') || [
+{name:'ফটোকপি (১ পেজ)',price:5},{name:'ছবি (পাসপোর্ট)',price:80},{name:'ছবি (স্ট্যাম্প)',price:60},
+{name:'কাগজ (A4)',price:2},{name:'স্টাম্প',price:50},{name:'কলম',price:10},
+{name:'খাতা',price:45},{name:'পেনসিল',price:10},{name:'রাবার',price:10},
+{name:'স্কেল',price:20},{name:'জুতা',price:450},{name:'স্যান্ডেল',price:250},
+{name:'ফাইল',price:25},{name:'খাম',price:5},{name:'ক্যালকুলেটর',price:350}
+];
+let sales = JSON.parse(localStorage.getItem('khan_sales')||'[]');
+let bakis = JSON.parse(localStorage.getItem('khan_baki')||'[]');
+let exps = JSON.parse(localStorage.getItem('khan_exp')||'[]');
+function save(){localStorage.setItem('khan_products',JSON.stringify(products));localStorage.setItem('khan_sales',JSON.stringify(sales));localStorage.setItem('khan_baki',JSON.stringify(bakis));localStorage.setItem('khan_exp',JSON.stringify(exps));render();}
+function show(id,btn){document.querySelectorAll('.wrap > div').forEach(d=>d.classList.add('hide'));document.getElementById(id).classList.remove('hide');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function today(){return new Date().toISOString().slice(0,10)}
+function render(){
+let g=document.getElementById('productGrid');g.innerHTML='';
+products.forEach((p,i)=>{
+g.innerHTML+=`<div class="item"><b>${p.name}</b><span>${p.price}৳</span><button onclick="sell(${i})">বিক্রি +</button></div>`
+});
+let ts=sales.filter(s=>s.date==today()).reduce((a,b)=>a+b.price,0);
+let te=exps.filter(s=>s.date==today()).reduce((a,b)=>a+b.amt,0);
+let tb=bakis.reduce((a,b)=>a+b.amt,0);
+document.getElementById('todaySale').innerText=ts+'৳';
+document.getElementById('todayExp').innerText=te+'৳';
+document.getElementById('totalBaki').innerText=tb+'৳';
+document.getElementById('saleList').innerHTML = sales.slice().reverse().slice(0,20).map(s=>`<div class="row"><span>${s.name} <br><span class="small">${s.cust||'ক্রেতা'} • ${s.type=='baki'?'বাকি':'নগদ'}</span></span><b>${s.price}৳</b></div>`).join('')||'এখনো বিক্রি নাই';
+document.getElementById('bakiList').innerHTML = bakis.map((b,i)=>`<div class="row"><span><b>${b.name}</b><br><span class="small">${b.note||''} • ${b.date}</span></span><span><b>${b.amt}৳</b><br><button onclick="paidBaki(${i})" style="background:#16a34a;color:#fff;border:0;padding:5px 10px;border-radius:6px;margin-top:4px">টাকা পাইছি</button></span></div>`).join('')||'কোনো বাকি নাই';
+document.getElementById('stockList').innerHTML = products.map((p,i)=>`<div class="row"><span>${p.name}</span><b>${p.price}৳ <button onclick="delP(${i})" style="background:#dc2626;color:#fff;border:0;padding:4px 8px;border-radius:6px">✕</button></b></div>`).join('');
+document.getElementById('allHisab').innerHTML = `<div class="row"><span>মোট বিক্রি</span><b>${sales.reduce((a,b)=>a+b.price,0)}৳</b></div><div class="row"><span>মোট বাকি</span><b>${tb}৳</b></div><div class="row"><span>মোট খরচ</span><b>${exps.reduce((a,b)=>a+b.amt,0)}৳</b></div>` + exps.slice().reverse().map(e=>`<div class="row"><span>${e.note}<br><span class="small">${e.date}</span></span><b class="red">-${e.amt}৳</b></div>`).join('');
+}
+function sell(i){
+let p=products[i];let cust=document.getElementById('custName').value;let type=document.getElementById('payType').value;
+sales.push({name:p.name,price:p.price,cust:cust,type:type,date:today()});
+if(type=='baki'){bakis.push({name:cust||'নাম নাই',amt:p.price,note:p.name,date:today()});alert(p.name+' বাকিতে লেখা হইছে');}
+else alert(p.name+' বিক্রি হইছে - '+p.price+'৳');
+save();
+}
+function addBaki(){let n=document.getElementById('bakiName').value;let a=+document.getElementById('bakiAmt').value;let note=document.getElementById('bakiNote').value;if(!n||!a)return alert('নাম আর টাকা দেন');bakis.push({name:n,amt:a,note:note,date:today()});save();}
+function paidBaki(i){bakis.splice(i,1);save();alert('বাকি শোধ হইছে');}
+function addProduct(){let n=document.getElementById('newName').value;let pr=+document.getElementById('newPrice').value;if(!n||!pr)return alert('নাম আর দাম দেন');products.push({name:n,price:pr});save();}
+function delP(i){products.splice(i,1);save();}
+function addExp(){let n=document.getElementById('expNote').value;let a=+document.getElementById('expAmt').value;if(!n||!a)return alert('লিখেন');exps.push({note:n,amt:a,date:today()});save();}
+render();
 </script>
 </body>
 </html>
